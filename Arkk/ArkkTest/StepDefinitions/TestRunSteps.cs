@@ -39,7 +39,7 @@ namespace ArkkTest.StepDefinitions
         [AfterScenario]
         public async Task CloseChrome()
         {
-            WebDriverContext.Browser.CloseAsync();
+            await WebDriverContext.Browser.CloseAsync();
         }
     }
 }

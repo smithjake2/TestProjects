@@ -93,22 +93,19 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
-testRunner.Given("I Have Logged In To The Platform", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I Have Logged In To The Platform", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.Given("I Navigate To The Process Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I Navigate To The Process Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-testRunner.Given("I Have The Process Stored", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When("I Filter The Process To Show The Stored Process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
-testRunner.When("I Filter The Process To Show The Stored Process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Open The Correct Process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
-testRunner.When("I Open The Correct Process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 12
-testRunner.When("I Navigate To SQL Transform Activity Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Navigate To SQL Transform Activity Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "Country",
@@ -126,9 +123,9 @@ testRunner.When("I Navigate To SQL Transform Activity Tab", ((string)(null)), ((
                             "TaxCode1",
                             "TransDate1",
                             "AP1AR1",
-                            "15",
-                            "17",
-                            "19",
+                            "15.00",
+                            "17.00",
+                            "19.00",
                             "Goods1"});
                 table1.AddRow(new string[] {
                             "Country2",
@@ -136,12 +133,12 @@ testRunner.When("I Navigate To SQL Transform Activity Tab", ((string)(null)), ((
                             "TaxCode2",
                             "TransDate2",
                             "AP1AR2",
-                            "16",
-                            "18",
-                            "20",
+                            "16.00",
+                            "18.00",
+                            "20.00",
                             "Goods2"});
-#line 13
-testRunner.Then("I Verify The Data In The Table:", ((string)(null)), table1, "Then ");
+#line 12
+ testRunner.Then("I Verify The Data In The Table:", ((string)(null)), table1, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
