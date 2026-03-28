@@ -28,8 +28,8 @@ namespace ArkkTest.StepDefinitions
             await LoginPage.ClickSignIn();
         }
 
-        [Given(@"I Navigate To The Process Page")]
-        public async Task GivenINavigateToTheProcessPage()
+        [Given(@"I Navigate Through The Tax Automation Page")]
+        public async Task GivenINavigateThroughTheTaxAutomationPage()
         {
             await WelcomePage.ClickTaxAutomationClickThru();
         }

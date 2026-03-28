@@ -20,22 +20,22 @@ namespace ArkkTest.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("NavigationAndVerification")]
-    public partial class NavigationAndVerificationFeature
+    [NUnit.Framework.DescriptionAttribute("ProcessExecutionAndFileUploadValidation")]
+    public partial class ProcessExecutionAndFileUploadValidationFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "NavigationAndVerification.feature"
+#line 1 "ProcessExecutionAndFileUploadValidation.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "NavigationAndVerification", "Verifies A Pre-Existing Process Is Complete Correctly", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "ProcessExecutionAndFileUploadValidation", "Verifies the End-to-End process can be completed", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,12 +74,12 @@ namespace ArkkTest.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("I Can Navigate To Processes And Verify The Data")]
-        public void ICanNavigateToProcessesAndVerifyTheData()
+        [NUnit.Framework.DescriptionAttribute("I Can Upload Activity And Convert Correctly")]
+        public void ICanUploadActivityAndConvertCorrectly()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I Can Navigate To Processes And Verify The Data", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I Can Upload Activity And Convert Correctly", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -97,15 +97,30 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I Navigate Through The Tax Automation Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When("I Filter The Process To Show The Stored Process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I Navigate To Workflows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
- testRunner.When("I Open The Correct Process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Click To Create A New Schedule", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
+ testRunner.When("I Create A New Schedule With Basic Information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 11
+ testRunner.When("I Navigate To Processes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
+ testRunner.When("I Filter The Process To Show The Stored Process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 13
+ testRunner.When("I Open The Correct Process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 14
+ testRunner.When("I Successfully Upload The Activity File", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 15
  testRunner.When("I Navigate To SQL Transform Activity Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Country",
                             "ReverseCharge",
                             "TaxCode",
@@ -115,7 +130,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Net",
                             "VAT",
                             "GoodsOrServices"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Country1",
                             "RevChar1",
                             "TaxCode1",
@@ -125,7 +140,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "17.00",
                             "19.00",
                             "Goods1"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Country2",
                             "RevChar2",
                             "TaxCode2",
@@ -135,8 +150,8 @@ this.ScenarioInitialize(scenarioInfo);
                             "18.00",
                             "20.00",
                             "Goods2"});
-#line 11
- testRunner.Then("I Verify The Data In The Table:", ((string)(null)), table1, "Then ");
+#line 16
+ testRunner.Then("I Verify The Data In The Table:", ((string)(null)), table2, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

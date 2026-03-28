@@ -8,13 +8,14 @@ namespace ArkkTest.PageObjectModel
     {
         public ProcessInstancePage(WebDriverContext webDriverContext) : base(webDriverContext) { }
 
-        private ILocator FileUploadBox => Page.GetByRole(AriaRole.Button, new() { Name = "Choose File" });
+        private ILocator FileUploadBox => Page.Locator("iframe").Nth(0).ContentFrame.GetByRole(AriaRole.Button, new() { Name = "Choose File" });
         private ILocator UploadActivityOptionBox => Page.GetByRole(AriaRole.Heading, new() { Name = "Upload Activity V3" });
         private ILocator SQLTransformActivityBox => Page.GetByRole(AriaRole.Heading, new() { Name = "SQL Transform Activity V3" });
         private IFrameLocator TableIFrame => Page.Locator("iframe").Nth(1).ContentFrame;
         private ILocator TableCells => TableIFrame.GetByRole(AriaRole.Cell);
 
         private ILocator TableVisibleVerifier => TableIFrame.GetByText("Table:");
+        private ILocator DeleteFile => Page.Locator("iframe").Nth(0).ContentFrame.GetByRole(AriaRole.Button, new() { Name = "Delete" });
 
         public async Task GoToUploadActivitySection()
         {
@@ -48,8 +49,14 @@ namespace ArkkTest.PageObjectModel
                     data.Clear();
                 }
             }
-            
+
             return rows;
+        }
+
+        public async Task UploadFile(string directory)
+        {
+            await FileUploadBox.SetInputFilesAsync(directory);
+            await Assertions.Expect(DeleteFile).ToBeVisibleAsync(new() { Timeout = 30000 });
         }
     }
 }

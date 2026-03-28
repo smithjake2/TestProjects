@@ -39,5 +39,10 @@ namespace ArkkTest.PageObjectModel
             await ClickFilterDropdownArrow();
             await ClickFilterOpenOption();
         }
+
+        public async Task VerifyPageLoaded()
+        {
+            await Assertions.Expect(ViewProcess).ToBeVisibleAsync(new() { Timeout = 15000});
+        }
     }
 }

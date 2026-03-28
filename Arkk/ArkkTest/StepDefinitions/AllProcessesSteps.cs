@@ -18,6 +18,7 @@ namespace ArkkTest.StepDefinitions
         [When(@"I Filter The Process To Show The Stored Process")]
         public async Task WhenIFilterTheProcessToShowTheStoredProcess()
         {
+            await AllProcessesPage.VerifyPageLoaded();
             await AllProcessesPage.ClickFilterDropdownArrow();
             await AllProcessesPage.ClickFilterOpenOption();
         }
