@@ -1,4 +1,5 @@
 using ArkkTest.Context;
+using ArkkTest.PageObjectModel;
 using Microsoft.Playwright;
 
 namespace ArkkTest.StepDefinitions
@@ -7,10 +8,12 @@ namespace ArkkTest.StepDefinitions
     public sealed class CalculatorStepDefinitions
     {
         public WebDriverContext WebDriverContext { get; }
+        public LoginPage LoginPage { get; }
 
-        public CalculatorStepDefinitions(WebDriverContext webDriverContext)
+        public CalculatorStepDefinitions(WebDriverContext webDriverContext, LoginPage loginPage)
         {
             WebDriverContext = webDriverContext;
+            LoginPage = loginPage;
         }
         // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
 
@@ -51,10 +54,14 @@ namespace ArkkTest.StepDefinitions
         }
 
         [Given(@"I Have Logged In To The Platform")]
-        public void GivenIHaveLoggedInToThePlatform()
+        public async Task GivenIHaveLoggedInToThePlatform()
         {
-            WebDriverContext.Page.GotoAsync("https://www.google.com/search?client=opera-gx&q=playwright+c%23+launch+chrome+browser&sourceid=opera&ie=UTF-8&oe=UTF-8");
-            throw new PendingStepException();
+            await WebDriverContext.Page.GotoAsync("https://hello.arkk.tech/");
+
+            await LoginPage.EnterUserName("smithjake2@hotmail.co.uk");
+            await LoginPage.ClickContinue();
+            await LoginPage.EnterPassword("aXvRg*88V&$FW4hs");
+            await LoginPage.ClickSignIn();
         }
 
         [Given(@"I Navigate To The Process Page")]
