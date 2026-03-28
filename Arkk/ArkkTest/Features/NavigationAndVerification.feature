@@ -1,8 +1,7 @@
 ﻿Feature: NavigationAndVerification
 
-A short summary of the feature
+Verifies A Pre-Existing Process Is Complete Correctly
 
-@tag1
 Scenario: I Can Navigate To Processes And Verify The Data
 	Given I Have Logged In To The Platform
 	Given I Navigate To The Process Page
