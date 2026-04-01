@@ -42,6 +42,7 @@ Examples:
 	| id           |
 	| 563332458748 |
 
+	##Fails as API merely creates the pet if it did not exist and therefore returns 200
 @DeletePet @ExpectedFail
 Scenario: UpdateForm returns 404 correctly when pet does not exist
 	Given I give the Pet the Id "115465825338875"

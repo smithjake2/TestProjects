@@ -18,6 +18,7 @@ Scenario: GetPetById returns error when Pet is not found
 	Then There are exactly 0 pets returned
 	Then The error response includes message "Pet not found"
 
+	##Fails as API returns 200 regardless of invalid status used. Documentation states 400 when invalid id format used
 	@ExpectedFail
 	Scenario: GetPetById returns error when invalid Id format is used
 	Given I call GetPetById with the id "asda" with failure
