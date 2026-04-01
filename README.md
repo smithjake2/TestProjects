@@ -16,3 +16,6 @@ Install Visual Studio's SpecFlow extension to have the test steps display correc
 Build the solution to map the steps in the feature files to the Steps files
 
 Change the Environment in Configuration\Configuration.json to the required server name
+
+### Test Notes
+Tests tagged with '@ExpectedFail' are done because the current implementation of the software being tested is failing
